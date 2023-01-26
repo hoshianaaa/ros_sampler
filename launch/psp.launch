@@ -7,7 +7,7 @@
       <param name="file_name" value="~/.ros/ros_param_server-psp"/>
   </node>
 
-  <node pkg="ros_sampler" type ="psp.py" name="psp" output="screen"/>
+  <node pkg="ros_sampler" type ="psp_test.py" name="psp_test" output="screen"/>
 
   <!--node pkg="rviz" type="rviz" name="rviz" args="-d $(find PACKAGE_NAME)/config/SETTING.rviz"/-->
 
