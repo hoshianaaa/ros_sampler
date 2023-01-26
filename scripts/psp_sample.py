@@ -20,7 +20,7 @@ if __name__ == '__main__':
   psp_list = []
 
   for i in range(10):
-    psp_list.append(PSP(node_name + "/test_data" + str(i)))
+    psp_list.append(PSP(node_name + "/test_data" + str(i), "String"))
 
   r = rospy.Rate(100)
   while not rospy.is_shutdown():
