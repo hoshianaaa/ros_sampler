@@ -35,7 +35,7 @@ print(ret)
 if ret:
   bash_cmd("rosparam load " + file_name)
 
-rospy.sleep(10)
+rospy.sleep(1)
 
 r = rospy.Rate(1)
 

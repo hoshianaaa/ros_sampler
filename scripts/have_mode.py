@@ -26,8 +26,8 @@ mode_list = ["mode1","mode2","mode3"]
 rospy.sleep(1)
 mode = rospy.get_param(node_name + "/mode", "mode1")
 
-pub_topic_name = rospy.get_param("~pub", "mode_list")
-sub_topic_name = rospy.get_param("~sub", "mode")
+pub_topic_name = rospy.get_param("~pub", node_name + "/mode_list")
+sub_topic_name = rospy.get_param("~sub", node_name + "/mode")
 
 print("pub:",pub_topic_name)
 print("sub:",sub_topic_name)
