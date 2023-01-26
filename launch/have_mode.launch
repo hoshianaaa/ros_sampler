@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <!--include file="$(find xxx)/launch/xxx.launch"/-->
+  <node pkg="ros_sampler" type ="ros_param_server.py" name="ros_param_server" output="screen">
+      <param name="file_name" value="~/.ros/ros_param_server-have_mode"/>
+  </node>
+
+  <node pkg="ros_sampler" type ="have_mode.py" name="have_mode" output="screen"/>
+
+  <!--node pkg="rviz" type="rviz" name="rviz" args="-d $(find PACKAGE_NAME)/config/SETTING.rviz"/-->
+
+</launch>
+
+
