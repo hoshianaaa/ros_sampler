@@ -11,18 +11,19 @@ sys.path.append(os.path.join(os.path.dirname(__file__), './python_ros_utils'))
 from python_utils import *
 from python_ros_utils import *
 
-mode_list = ["mode1","mode2","mode3"]
-mode = "mode1"
 
 def callback(msg):
   global mode, node_name
   d = msg.data
   if d in mode_list:
     mode = d
-    rosparam.set_param("/node_name/mode",mode)
+    rosparam.set_param(node_name + "/mode",mode)
 
 node_name = "have_mode"
 rospy.init_node(node_name)
+
+mode_list = ["mode1","mode2","mode3"]
+mode = rospy.get_param(node_name + "/mode", "mode1")
 
 pub_topic_name = rospy.get_param("~pub", "mode_list")
 sub_topic_name = rospy.get_param("~sub", "mode")

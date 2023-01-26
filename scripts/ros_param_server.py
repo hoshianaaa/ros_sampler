@@ -31,8 +31,11 @@ rospy.Subscriber(sub_topic_name, Float64, callback)
 '''
 
 ret = isfile(file_name)
+print(ret)
 if ret:
-  rosparam.load(file_name)
+  bash_cmd("rosparam load " + file_name)
+
+rospy.sleep(10)
 
 r = rospy.Rate(1)
 
