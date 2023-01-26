@@ -2,6 +2,8 @@
 
 <launch>
 
+  <rosparam command="load" file="$(env HOME)/.ros/ros_param_server-have_mode" />
+
   <!--include file="$(find xxx)/launch/xxx.launch"/-->
   <node pkg="ros_sampler" type ="ros_param_server.py" name="ros_param_server" output="screen">
       <param name="file_name" value="~/.ros/ros_param_server-have_mode"/>
