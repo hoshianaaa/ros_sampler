@@ -37,7 +37,7 @@ if ret:
 
 rospy.sleep(1)
 
-r = rospy.Rate(1)
+r = rospy.Rate(10)
 
 while not rospy.is_shutdown():
   #pub.publish(Float64(0))
