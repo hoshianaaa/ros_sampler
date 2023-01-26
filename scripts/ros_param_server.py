@@ -15,6 +15,7 @@ def callback(msg):
   print(msg.data)
 
 rospy.init_node("ros_param_server")
+timer = Timer()
 
 file_name = rospy.get_param("~file_name", "~/.ros/ros_param_server_test")
 print("file_name:",file_name)
@@ -35,6 +36,7 @@ print(ret)
 if ret:
   bash_cmd("rosparam load " + file_name)
 
+print("start diff:", timer.st())
 rospy.sleep(1)
 
 r = rospy.Rate(10)

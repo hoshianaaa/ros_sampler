@@ -20,10 +20,9 @@ def callback(msg):
     rosparam.set_param(node_name + "/mode",mode)
 
 node_name = "have_mode"
-rospy.init_node(node_name)
+init(node_name)
 
 mode_list = ["mode1","mode2","mode3"]
-rospy.sleep(1)
 mode = rospy.get_param(node_name + "/mode", "mode1")
 
 pub_topic_name = rospy.get_param("~pub", node_name + "/mode_list")

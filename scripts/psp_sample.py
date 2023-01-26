@@ -15,7 +15,7 @@ from psp import PSP
 if __name__ == '__main__':
 
   node_name = "param_sub_pub"
-  rospy.init_node(node_name)
+  init(node_name)
 
   psp_list = []
 
