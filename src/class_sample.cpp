@@ -80,7 +80,7 @@ int main(int argc, char * argv[])
     Basic node = Basic(&nh);
     PSP psp = PSP(&nh,"psp_sample/mode");
 
-    ros::Rate loop_rate(1);
+    ros::Rate loop_rate(100);
 
     while (ros::ok())
     {
