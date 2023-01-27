@@ -11,7 +11,6 @@ sys.path.append(os.path.join(os.path.dirname(__file__), './python_ros_utils'))
 from python_utils import *
 from python_ros_utils import *
 from psp import PSP
-from psp_string import PSP_string
 
 if __name__ == '__main__':
 
@@ -22,9 +21,9 @@ if __name__ == '__main__':
   psp_num = 3
 
   for i in range(psp_num):
-    psp_list.append(PSP(node_name + "/test_data" + str(i)))
+    psp_list.append(PSP(node_name + "/param" + str(i)))
 
-  psp_str = PSP_string(node_name + "/mode")
+  psp_str = PSP(node_name + "/mode", "String")
 
   r = rospy.Rate(100)
   while not rospy.is_shutdown():
