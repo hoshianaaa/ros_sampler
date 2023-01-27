@@ -207,5 +207,5 @@ target_link_libraries(publisher ${catkin_LIBRARIES})
 add_executable(listener src/listener.cpp)
 target_link_libraries(listener ${catkin_LIBRARIES})
 
-add_executable(class_sample src/class_sample.cpp)
-target_link_libraries(class_sample ${catkin_LIBRARIES})
+add_executable(psp_test src/psp_test.cpp)
+target_link_libraries(psp_test ${catkin_LIBRARIES})
