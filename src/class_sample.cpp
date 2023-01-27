@@ -1,29 +1,35 @@
 #include"ros/ros.h"
 #include"sensor_msgs/JointState.h"
+#include"std_msgs/String.h"
+#include <iostream>
 
 class MyNode
 {
     public:
-        MyNode(ros::NodeHandle *nh):
-            pub(nh->advertise<sensor_msgs::JointState>("js", 5)),
-            sub(nh->subscribe("topic", 1000, &MyNode::callback, this)),
-            timer(nh->createTimer(ros::Duration(0.1), &MyNode::main_loop, this))
+        MyNode(ros::NodeHandle *nodehandle):nh_(*nodehandle)
          {
+            pub = nh_.advertise<std_msgs::String>("/data", 5);
+            sub = nh_.subscribe("/data", 1000, &MyNode::callback, this);
+            timer = nh_.createTimer(ros::Duration(0.1), &MyNode::main_loop, this);
+         }
+
+          void callback(const std_msgs::String& msg)
+         {
+
+           std::cout << msg.data << std::endl;
 
          }
 
-         void callback(const sensor_msgs::JointState & js) const
-         {
-
-         }
-
-         void main_loop(const ros::TimerEvent &) const
+         void main_loop(const ros::TimerEvent &)
          {
             // implement the state machine here
-             pub.publish(sensor_msgs::JointState{});
+             std_msgs::String msg;
+             msg.data = "bbb";
+             pub.publish(msg);
          }
 
     private:
+        ros::NodeHandle nh_;
         ros::Publisher pub;
         ros::Subscriber sub;
         ros::Timer timer;
