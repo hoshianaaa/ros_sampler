@@ -23,3 +23,8 @@ if __name__ == '__main__':
   dc.send(100)
   dc.wait()
 
+# ** test command **
+# rostopic pub /data 
+# rostopic pub /data std_msgs/Float64 "data: 10.0"
+# rostopic pub /data std_msgs/Float64 "data: 100.0"
+
