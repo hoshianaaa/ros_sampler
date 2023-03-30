@@ -18,7 +18,7 @@ if __name__ == '__main__':
   node_name = "data_controller_sample"
   init(node_name)
 
-  dc = DataController("data")
+  dc = DataController("data", error_th=5.0)
   dc.debug_on()
   dc.send(100)
   dc.wait()
@@ -26,5 +26,5 @@ if __name__ == '__main__':
 # ** test command **
 # rostopic pub /data 
 # rostopic pub /data std_msgs/Float64 "data: 10.0"
-# rostopic pub /data std_msgs/Float64 "data: 100.0"
+# rostopic pub /data std_msgs/Float64 "data: 95.0"
 
